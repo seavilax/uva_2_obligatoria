@@ -71,11 +71,18 @@ body {
     font-weight: 700;
 }
 
-/* = Tabla de materias = */
+/* = Tabla de materias  = */
+
+.table-section {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* = scroll mas suavee en responsive = */
+}
+
 .subject-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 67px;
+    min-width: 600px; /* =  se genere un scroll para que no se deforme y se vea desde celulares = */
 }
 
 .subject-table th {
@@ -92,6 +99,22 @@ body {
 
 .subject-table tr:nth-child(even) {
     background-color: #f7f8fc;
+}
+
+
+/* =  scrolls para la barra en responsive = */
+
+.table-section::-webkit-scrollbar {
+    height: 6px; 
+}
+
+.table-section::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 3px; 
+}
+
+.table-section::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
 }
 
 /* = Footer = */
@@ -142,10 +165,11 @@ img {
 
 /* = foto perfil = */
 .foto-perfil {
-    max-width: 400px;
+    width: clamp(250px, 50%, 400px);
     height: auto;
     display: block;
     margin: 0 auto 30px;
+    border-radius: 15px;
 }
 
 /* = Cuadros (grid de diseño y desarrollo) = */
@@ -156,6 +180,20 @@ img {
     gap: 20px;
     margin-top: 30px;
 }
+
+/* = cajas de tareas/avisos = */
+.box-tareas {
+    background-color: #f7f8fc;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #DBEAFE;
+    overflow: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px /* altura mínima pequeña */
+    
+}
+
+
 
 /* = cajas de dineño y desarrollo web = */
 .box {
